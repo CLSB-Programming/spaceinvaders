@@ -16,4 +16,10 @@ function Keycodes() {
         left: 37,
         right: 39
     }
+
+    this.touch = {
+    	up: 38,
+    	left: 37,
+    	right: 39
+    }
 }

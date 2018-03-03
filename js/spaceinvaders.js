@@ -216,12 +216,12 @@ Game.prototype.touchmove = function(e) {
     var currentX = e.changedTouches[0].pageX;
     if (previousX > 0){
         if (currentX > previousX){
-            delete this.pressedKeys[keycodes.arrows.left];
-            this.pressedKeys[keycodes.arrows.right] = true;
+            delete this.pressedKeys[keycodes.touch.left];
+            this.pressedKeys[keycodes.touch.right] = true;
         }
         else{
-            delete this.pressedKeys[keycodes.arrows.right];
-            this.pressedKeys[keycodes.arrows.left] = true;
+            delete this.pressedKeys[keycodes.touch.right];
+            this.pressedKeys[keycodes.touch.left] = true;
         }
     }
     previousX = currentX;
@@ -375,17 +375,17 @@ PlayState.prototype.update = function(game, dt) {
     //  event for smooth movement, otherwise the ship would move
     //  more like a text editor caret.
   
-    // Left Movement Keys : A Key / Left Arrow Key
-    if(game.pressedKeys[keycodes.a] || game.pressedKeys[keycodes.arrows.right]) {
+    // Left Movement Keys : A Key / Left Arrow Key / Touch Left
+    if(game.pressedKeys[keycodes.a] || game.pressedKeys[keycodes.arrows.left] || game.pressedKeys[keycodes.touch.left]) {
         this.ship.x -= this.shipSpeed * dt;
     }
     
-    // Right Movement Keys: D Key / Right Arrow Key
-    if(game.pressedKeys[keycodes.d] || game.pressedKeys[keycodes.arrows.right]){
+    // Right Movement Keys: D Key / Right Arrow Key / Touch Right
+    if(game.pressedKeys[keycodes.d] || game.pressedKeys[keycodes.arrows.right] || game.pressedKeys[keycodes.touch.right]){
         this.ship.x += this.shipSpeed * dt;
     }
-    // Fire Keys : Space Key / W Key / Up Key
-    if(game.pressedKeys[keycodes.space] || game.pressedKeys[keycodes.w] || game.pressedKeys[keycodes.arrows.up]) {
+    // Fire Keys : Space Key / W Key / Up Key / Touch Up
+    if(game.pressedKeys[keycodes.space] || game.pressedKeys[keycodes.w] || game.pressedKeys[keycodes.arrows.up] || game.pressedKeys[keycodes.touch.up]) {
         this.fireRocket();
     }
 
