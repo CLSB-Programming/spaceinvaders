@@ -29,8 +29,9 @@ To add Space Invaders to your site, just add this code.
     <p><a id="muteLink" href="#" onclick="toggleMute()">Mute</a> | 
         <a href="https://github.com/dwmkerr/spaceinvaders">Original Project</a> | 
         <a href="https://github.com/CLSB-Programming/spaceinvaders">GitHub Project</a> | 
-        v1.1</p>
+        v1.2</p>
 </div>
+<script src="https://clsb-programming.github.io/spaceinvaders/js/keycodes.js"></script>
 <script src="https://clsb-programming.github.io/spaceinvaders/js/starfield.js"></script>
 <script src="https://clsb-programming.github.io/spaceinvaders/js/spaceinvaders.js"></script>
 <script src="https://clsb-programming.github.io/spaceinvaders/js/setup.js"></script>
