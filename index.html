@@ -2,6 +2,9 @@
 <html>
     <head>
         <title>Space Invaders</title>
+
+        <!-- Add CSS -->
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/core.css">
         <link rel="stylesheet" type="text/css" href="css/typeography.css">
         <link rel="stylesheet" type="text/css" href="css/game.css">
@@ -9,16 +12,42 @@
     <body>
         <div id="starfield"></div>
         <div id="gamecontainer">
-        <canvas id="gameCanvas"></canvas>
+            <canvas id="gameCanvas"></canvas>
         </div>
+        
         <div id="info">
             <p>The invaders get faster and drop more bombs as you complete each level! | Controls: WASD / Arrow Keys + Space / Touch</p>
             <p><a id="muteLink" href="#" onclick="toggleMute()">Mute</a> | 
+                <a href="javascript:open(tutorial)">Tutorial</a> | 
                 <a href="https://github.com/dwmkerr/spaceinvaders">Original Project</a> | 
                 <a href="https://github.com/CLSB-Programming/spaceinvaders">GitHub Project</a> | 
                 v1.2</p>
         </div>
 
+        <!-- Tutorial Modal -->
+        <div id="tutorialModal" class="modal">
+            
+            <!-- Content -->
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <span class="closeBtn">&times;</span>
+                    <span class="controlsBtn">Controls</span>
+                    <h3>Tutorial</h3>
+                </div>
+                
+                <!-- Body -->
+                <div class="modal-body">
+                    <p>To complete the level you need to destroy all the invaders.</p>
+                    <p>As you progress through the levels, the invaders will get faster and faster.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Add JS -->
+        <script src="js/modal.js"></script>
         <script src="js/keycodes.js"></script>
         <script src="js/starfield.js"></script>
         <script src="js/spaceinvaders.js"></script>
